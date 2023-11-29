@@ -8,7 +8,7 @@ const app= express()
 const db= require('./database')
 app.use(cors())//CORS Middleware
 app.use(bodyParser.json())
-const port =3000; //set port  number for app
+const port =80; //set port  number for app
 mongoose.connect(db.database)//Connect to Database
 mongoose.connection.on('connected',()=>{
     console.log(`Connected to the database ${db.database}`);
@@ -23,6 +23,6 @@ app.get('/',(req,res)=>{ //set index route
 const route = require('./routers');//set router
 const database = require('./database');
 app.use('/',route)
-// app.listen(port,()=>{
-//     console.log('Server Started on Port '+port);
-// })
+app.listen(port,()=>{
+    console.log('Server Started on Port '+port);
+})
