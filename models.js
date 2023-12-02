@@ -17,14 +17,10 @@ const Schema = mongoose.Schema({
 
 const user=module.exports = mongoose.model('user',Schema)
 
-module.exports.getUserById = function (id , callback) {
-    user.findById(id,callback)    
-}
 module.exports.getUserBysername = function (username , callback) {
     const query ={username:username}
     user.findById(username,callback)    
 }
 module.exports.adduser = function (newUser,callback) {
-    console.log(newUser);
     newUser.save()
 }

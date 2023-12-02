@@ -14,7 +14,7 @@ mongoose.connection.on('connected',()=>{
     console.log(`Connected to the database ${db.database}`);
 })
 mongoose.connection.on('error',(err)=>{
-    console.log(`error to the database ${err}`);
+    // console.log(`error to the database ${err}`);
 })
 app.use(express.static(path.join(__dirname,'public')))
 app.get('/',(req,res)=>{ //set index route

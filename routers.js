@@ -5,8 +5,9 @@ const ipinfo_schema = require('./ipmodel');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 //Register
-router.get('/reg',(req,res,next)=>{
-    res.send('Registerion')
+router.get('/reg',async (req,res,next)=>{
+    const results = await user.find({}).exec();
+    res.send(results);    
 });
 router.post('/register',(req,res,next)=>{
     let newuser=new user({
