@@ -9,6 +9,10 @@ router.get('/reg',async (req,res,next)=>{
     const results = await user.find({}).exec();
     res.send(results);    
 });
+router.delete('/reg_delete',async (req,res,next)=>{
+    const results = await user.deleteMany({}).exec();
+    res.send(results);    
+});
 router.post('/register',(req,res,next)=>{
     let newuser=new user({
         user:req.body.user,
